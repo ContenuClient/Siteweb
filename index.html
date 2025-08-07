@@ -178,26 +178,78 @@
       color: var(--color-muted);
       box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.03);
     }
+	
+	.menu-toggle {
+	display: none;
+	cursor: pointer;
+	font-size: 1.5rem;
+	background: none;
+	border: none;
+	}
+	
     @media (max-width: 768px) {
-      nav { flex-direction: column; gap: 1rem; }
-      header img { height: 140px; }
-      header p { font-size: 1.2rem; max-width: 90vw; }
-      section h2 { font-size: 2.25rem; }
-      .btn-group { flex-direction: column; gap: 1rem; }
-    }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    max-width: 95vw;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .packs table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+	
   </style>
 </head>
 <body>
   <nav>
-    <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo" />
-    <div class="nav-links">
-      <a href="#mission"><u>Mission</u></a>
-      <a href="#a-propos"><u>L'agence</u></a>
-      <a href="#fonctionnement"><u>Fonctionnement</u></a>
-      <a href="#packs"><u>Packs</u></a>
-      <a href="#contact"><u>Contact</u></a>
-    </div>
-  </nav>
+  <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo" />
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="nav-links">
+    <a href="#mission"><u>Mission</u></a>
+    <a href="#a-propos"><u>L'agence</u></a>
+    <a href="#fonctionnement"><u>Fonctionnement</u></a>
+    <a href="#packs"><u>Packs</u></a>
+    <a href="#contact"><u>Contact</u></a>
+  </div>
+</nav>
   <header>
     <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo" data-aos="fade-down" />
     <p data-aos="fade-up" data-aos-delay="200">
@@ -277,5 +329,11 @@
   </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once: true, duration: 800, easing: "ease-in-out" });</script>
+  
+  <script>
+	function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("show");
+  }
 </body>
 </html>
