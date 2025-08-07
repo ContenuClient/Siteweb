@@ -20,8 +20,17 @@
       --card-bg: #ffffff;
       --shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Inter", sans-serif;
       background-color: var(--color-bg);
@@ -29,7 +38,12 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    a { text-decoration: none; color: inherit; }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -43,13 +57,37 @@
       width: 100%;
       z-index: 999;
     }
-    nav img { height: 30px; }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { font-weight: 600; color: var(--color-text); transition: color 0.3s; }
-    .nav-links a:hover { color: var(--color-secondary); }
+
+    nav img {
+      height: 30px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--color-text);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-secondary);
+    }
+
     header {
       position: relative;
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
       display: flex;
       flex-direction: column;
@@ -57,10 +95,10 @@
       align-items: center;
       color: white;
       text-align: center;
-      padding: 0 2rem;
+      padding: 7rem 2rem 3rem;
       overflow: hidden;
-      padding-top: 7rem;
     }
+
     header::before {
       content: "";
       position: absolute;
@@ -72,16 +110,20 @@
       animation: pulse 15s ease-in-out infinite;
       z-index: 0;
     }
+
     @keyframes pulse {
       0%, 100% { transform: scale(1); opacity: 0.1; }
       50% { transform: scale(1.05); opacity: 0.2; }
     }
+
     header img {
       height: 200px;
       margin-bottom: 2rem;
       position: relative;
       z-index: 1;
+      max-width: 90%;
     }
+
     header p {
       font-size: 1.5rem;
       max-width: 700px;
@@ -90,6 +132,7 @@
       margin-bottom: 3rem;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
+
     .btn-group {
       display: flex;
       gap: 1.5rem;
@@ -98,6 +141,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .btn {
       background: var(--color-accent);
       color: white;
@@ -110,6 +154,7 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     }
+
     .btn:hover,
     .btn:focus {
       background-color: #333333;
@@ -117,11 +162,13 @@
       transform: translateY(-3px);
       outline: none;
     }
+
     section {
       max-width: 1100px;
       margin: 6rem auto;
       padding: 0 2rem;
     }
+
     section h2 {
       font-size: 3rem;
       font-weight: 700;
@@ -129,18 +176,23 @@
       text-align: center;
       margin-bottom: 3rem;
     }
-    .mission p, .agency-description p, .how-it-works p {
+
+    .mission p,
+    .agency-description p,
+    .how-it-works p {
       font-size: 1.3rem;
       max-width: 800px;
       margin: 0 auto 1.5rem auto;
       text-align: center;
       color: var(--color-muted);
     }
+
     .why {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.5rem;
     }
+
     .why div {
       background: var(--card-bg);
       padding: 2.5rem 2rem;
@@ -149,16 +201,19 @@
       text-align: center;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
+
     .why div:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
+
     .packs table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0 0.75rem;
       font-size: 1.15rem;
     }
+
     .packs p {
       margin-top: 2rem;
       text-align: center;
@@ -166,10 +221,12 @@
       color: var(--color-muted);
       font-size: 1rem;
     }
+
     .contact {
       text-align: center;
       margin-bottom: 4rem;
     }
+
     footer {
       text-align: center;
       padding: 3rem 2rem;
@@ -178,78 +235,72 @@
       color: var(--color-muted);
       box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.03);
     }
-	
-	.menu-toggle {
-	display: none;
-	cursor: pointer;
-	font-size: 1.5rem;
-	background: none;
-	border: none;
-	}
-	
+
+    /* ✅ Responsive */
     @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.5rem;
+      }
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-  }
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 1.5rem;
+        top: 1.2rem;
+      }
 
-  .nav-links a {
-    padding: 0.5rem 0;
-  }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 1rem;
+      }
 
-  .nav-links.show {
-    display: flex;
-  }
+      .nav-links.show {
+        display: flex;
+      }
 
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 1.5rem;
-    top: 1.2rem;
-  }
+      header img {
+        height: 140px;
+      }
 
-  header p {
-    font-size: 1.2rem;
-    max-width: 95vw;
-  }
+      header p {
+        font-size: 1.2rem;
+        max-width: 95vw;
+      }
 
-  section h2 {
-    font-size: 2rem;
-  }
+      section h2 {
+        font-size: 2rem;
+      }
 
-  .btn-group {
-    flex-direction: column;
-    gap: 1rem;
-  }
+      .btn-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
 
-  .packs table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-	
+      .packs table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
   </style>
 </head>
 <body>
   <nav>
-  <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo" />
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  <div class="nav-links">
-    <a href="#mission"><u>Mission</u></a>
-    <a href="#a-propos"><u>L'agence</u></a>
-    <a href="#fonctionnement"><u>Fonctionnement</u></a>
-    <a href="#packs"><u>Packs</u></a>
-    <a href="#contact"><u>Contact</u></a>
-  </div>
-</nav>
+    <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo" />
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="nav-links">
+      <a href="#mission"><u>Mission</u></a>
+      <a href="#a-propos"><u>L'agence</u></a>
+      <a href="#fonctionnement"><u>Fonctionnement</u></a>
+      <a href="#packs"><u>Packs</u></a>
+      <a href="#contact"><u>Contact</u></a>
+    </div>
+  </nav>
+
   <header>
     <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo" data-aos="fade-down" />
     <p data-aos="fade-up" data-aos-delay="200">
@@ -260,24 +311,21 @@
       <a href="#contact" class="btn">Contactez-nous</a>
     </div>
   </header>
+
   <section id="mission" class="mission" data-aos="fade-up" data-aos-delay="100">
     <h2>Notre mission</h2>
     <p>
       Nous aidons les marques à créer du contenu vidéo impactant, sincère, et aligné avec ce que recherchent leurs clients.
     </p>
   </section>
+
   <section id="a-propos" class="agency-description" data-aos="fade-up" data-aos-delay="800">
     <h2>L'agence</h2>
-    <p>
-      <strong>Contenu Client</strong> est une agence spécialisée dans la création de vidéos UGC (User Generated Content) qui misent sur l’authenticité, la proximité et l’impact.
-    </p>
-    <p>
-      <strong>Nous ne filmons pas les vidéos nous-mêmes. Nous faisons le lien entre votre marque et un réseau de créateurs UGC sélectionnés selon votre secteur et vos objectifs.</strong>
-    </p>
-    <p>
-      <strong>Résultat :</strong> vous gagnez du temps, vous obtenez des vidéos prêtes à l’emploi, et vous touchez vos clients avec des contenus qui leur parlent vraiment.
-    </p>
+    <p><strong>Contenu Client</strong> est une agence spécialisée dans la création de vidéos UGC (User Generated Content) qui misent sur l’authenticité, la proximité et l’impact.</p>
+    <p><strong>Nous ne filmons pas les vidéos nous-mêmes. Nous faisons le lien entre votre marque et un réseau de créateurs UGC sélectionnés selon votre secteur et vos objectifs.</strong></p>
+    <p><strong>Résultat :</strong> vous gagnez du temps, vous obtenez des vidéos prêtes à l’emploi, et vous touchez vos clients avec des contenus qui leur parlent vraiment.</p>
   </section>
+
   <section id="fonctionnement" class="how-it-works" data-aos="fade-up" data-aos-delay="200">
     <h2>Comment ça fonctionne ?</h2>
     <p>Nous nous occupons de tout pour vous :</p>
@@ -287,6 +335,7 @@
     <p>✅ Montage et formatage pour les Ads</p>
     <p>Votre seul travail : nous dire ce que vous vendez. On s’occupe du reste.</p>
   </section>
+
   <section data-aos="fade-up" data-aos-delay="300">
     <h2>Pourquoi ça marche ?</h2>
     <div class="why">
@@ -304,6 +353,7 @@
       </div>
     </div>
   </section>
+
   <section id="packs" class="packs" data-aos="fade-up" data-aos-delay="500">
     <h2>Nos Packs Vidéo</h2>
     <table>
@@ -318,22 +368,26 @@
     </table>
     <p>🔧 Pour des besoins spécifiques ? Nous vous créons votre pack sur mesure.</p>
   </section>
+
   <section id="contact" class="contact" data-aos="fade-up" data-aos-delay="700">
     <h2>Contact</h2>
     <p>📧 <strong>Email :</strong> <a href="mailto:contact@contenuclient.fr">contact@contenuclient.fr</a></p>
     <p>📱 <strong>Téléphone :</strong> 06 12 34 56 78</p>
     <p>📅 <strong>Rendez-vous :</strong> <a href="#">Lien Calendly</a></p>
   </section>
+
   <footer>
     &copy; 2025 Contenu Client – Tous droits réservés.
   </footer>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once: true, duration: 800, easing: "ease-in-out" });</script>
-  
   <script>
-	function toggleMenu() {
-    const navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("show");
-  }
+    AOS.init({ once: true, duration: 800, easing: "ease-in-out" });
+
+    function toggleMenu() {
+      const navLinks = document.querySelector(".nav-links");
+      navLinks.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
