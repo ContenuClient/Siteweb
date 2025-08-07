@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contenu Client – Vidéos Authentiques qui Convertissent</title>
   <meta name="description" content="Agence spécialisée en vidéos UGC : Créez des vidéos authentiques qui convertissent pour vos campagnes TikTok, Instagram et Meta Ads.">
   <meta property="og:title" content="Contenu Client – Vidéos Authentiques qui Convertissent" />
@@ -39,6 +39,11 @@
       overflow-x: hidden;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -58,8 +63,9 @@
       z-index: 999;
     }
 
-    nav img {
-      height: 30px;
+    .logo img {
+      max-width: 150px;
+      height: auto;
     }
 
     .menu-toggle {
@@ -155,12 +161,10 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     }
 
-    .btn:hover,
-    .btn:focus {
+    .btn:hover {
       background-color: #333333;
       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
       transform: translateY(-3px);
-      outline: none;
     }
 
     section {
@@ -235,9 +239,8 @@
       color: var(--color-muted);
       box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.03);
     }
-	
-	}
-	.buttons {
+
+    .buttons {
       text-align: center;
       margin-top: 30px;
     }
@@ -248,103 +251,75 @@
       padding: 12px 20px;
       margin: 10px;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
       transition: background 0.3s ease;
     }
     .buttons a:hover {
       background: #126EE0;
+    }
 
-    
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         align-items: flex-start;
         padding: 1rem 1.5rem;
       }
-
       .menu-toggle {
         display: block;
         position: absolute;
         right: 1.5rem;
         top: 1.2rem;
       }
-
       .nav-links {
         flex-direction: column;
         width: 100%;
         display: none;
         margin-top: 1rem;
       }
-
       .nav-links.show {
         display: flex;
       }
-
       header img {
         height: 140px;
       }
-
       header p {
         font-size: 1.2rem;
         max-width: 95vw;
       }
-
       section h2 {
         font-size: 2rem;
       }
-
       .btn-group {
         flex-direction: column;
         gap: 1rem;
       }
-
       .packs table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-		
-		.pack-cards {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-		}
+      }
+    }
 
-.pack-cards .card {
-  background: #f9f9f9;
-  border-radius: 16px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-}
-
-.pack-cards .card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-primary);
-}
-
-.pack-cards .card p {
-  font-size: 1.1rem;
-  color: var(--color-muted);
-}
-
-.pack-cards .card .price {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  color: var(--color-accent);
-}
-
+    @media (max-width: 480px) {
+      header p {
+        font-size: 1rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <nav>
-		<div class="logo">
-			<img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo">
-		</div>
+    <div class="logo">
+      <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo">
+    </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <div class="nav-links">
       <a href="#mission">Mission</a>
@@ -357,7 +332,7 @@
 
   <header>
     <img src="https://i.imgur.com/BMKiS6L.png" alt="Contenu Client Logo" data-aos="fade-down" />
-    <p data-aos="fade-up" data-aos-delay="200">
+    <p data-aos="fade-up" data-aos-delay="100">
       Du contenu UGC prêt à performer sur TikTok, Instagram. Réalisé par les bons créateurs, pour les bonnes marques.
     </p>
     <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
@@ -367,7 +342,7 @@
   </header>
 
 
-  <section id="a-propos" class="agency-description" data-aos="fade-up" data-aos-delay="800">
+  <section id="a-propos" class="agency-description" data-aos="fade-up" data-aos-delay="100">
     <h2>L'agence</h2>
     <p><strong>Contenu Client est une agence spécialisée dans la création de vidéos UGC (User Generated Content), au service des marques qui veulent toucher leur audience avec authenticité, impact et proximité.</p>
     <p><strong>Nous ne réalisons pas les vidéos nous-mêmes : nous faisons le lien entre votre marque et des créateurs UGC sélectionnés avec soin, selon votre secteur, vos objectifs et vos valeurs.</strong></p>
@@ -389,7 +364,7 @@
     </p>
   </section>
 
-  <section id="fonctionnement" class="how-it-works" data-aos="fade-up" data-aos-delay="200">
+  <section id="fonctionnement" class="how-it-works" data-aos="fade-up" data-aos-delay="100">
     <h2>Comment ça fonctionne ?</h2>
     <p>Nous nous occupons de tout pour vous :</p>
     <p>✅ Sélection de créateurs UGC adaptés à votre marque</p>
@@ -398,7 +373,7 @@
     <p>Votre seul travail : nous dire ce que vous vendez. On s’occupe du reste.</p>
   </section>
 
-  <section data-aos="fade-up" data-aos-delay="300">
+  <section data-aos="fade-up" data-aos-delay="100">
     <h2>Pourquoi ça marche ?</h2>
     <div class="why">
       <div>
@@ -443,9 +418,9 @@
 </section>
 
 
-  <section id="contact" class="contact" data-aos="fade-up" data-aos-delay="700">
+  <section id="contact" class="contact" data-aos="fade-up" data-aos-delay="100">
     
-	<h2><u>Contact       <img src="https://i.imgur.com/b4BobpK.png" alt="Contact" style="height: 35px; vertical-align: middle; margin-right: 8px;"></u></h2>
+	<h2><u>Contact       <img src="https://i.imgur.com/b4BobpK.png" alt="Contact" style="height: 35px; vertical-align: middle; margin-right: 8px;"><></h2>
 	
 	<p><strong>Intéressé par un pack ? Des questions ? On vous répond par mail : </strong></p><br>
 	
@@ -463,17 +438,15 @@
     
   </section>
 
-  <footer>
+   <footer>
     &copy; 2025 Contenu Client – Tous droits réservés.
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 800, easing: "ease-in-out" });
-
     function toggleMenu() {
-      const navLinks = document.querySelector(".nav-links");
-      navLinks.classList.toggle("show");
+      document.querySelector(".nav-links").classList.toggle("show");
     }
   </script>
 </body>
