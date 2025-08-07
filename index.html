@@ -117,7 +117,7 @@
     }
 
     header img {
-      height: 135px;
+      height: 160px;
       margin-bottom: 2rem;
       position: relative;
       z-index: 1;
@@ -194,7 +194,7 @@
     }
 
     .why div {
-      background: var(--card-bg);
+      background: #E6E6E6;
       padding: 2.5rem 2rem;
       border-radius: 18px;
       box-shadow: var(--shadow);
@@ -235,6 +235,25 @@
       color: var(--color-muted);
       box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.03);
     }
+	
+	}
+	.buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .buttons a {
+      display: inline-block;
+      background: var(--color-muted);
+      color: #fff;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #126EE0;
 
     
     @media (max-width: 768px) {
@@ -323,19 +342,21 @@
 </head>
 <body>
   <nav>
-    <img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo" />
+		<div class="logo">
+			<img src="https://i.imgur.com/LccOW1Y.png" alt="Contenu Client Logo">
+		</div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <div class="nav-links">
-      <a href="#mission"><u>Mission</u></a>
-      <a href="#a-propos"><u>L'agence</u></a>
-      <a href="#fonctionnement"><u>Fonctionnement</u></a>
-      <a href="#packs"><u>Packs</u></a>
-      <a href="#contact"><u>Contact</u></a>
+      <a href="#mission">Mission</a>
+      <a href="#a-propos">L'agence</a>
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#packs">Packs</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <header>
-    <img src="https://i.imgur.com/O4PnYnu.png" alt="Contenu Client Logo" data-aos="fade-down" />
+    <img src="https://i.imgur.com/BMKiS6L.png" alt="Contenu Client Logo" data-aos="fade-down" />
     <p data-aos="fade-up" data-aos-delay="200">
       Du contenu UGC prêt à performer sur TikTok, Instagram. Réalisé par les bons créateurs, pour les bonnes marques.
     </p>
@@ -345,18 +366,27 @@
     </div>
   </header>
 
-  <section id="mission" class="mission" data-aos="fade-up" data-aos-delay="100">
-    <h2>Notre mission</h2>
-    <p>
-      Nous aidons les marques à créer du contenu vidéo impactant, sincère, et aligné avec ce que recherchent leurs clients.
-    </p>
-  </section>
 
   <section id="a-propos" class="agency-description" data-aos="fade-up" data-aos-delay="800">
     <h2>L'agence</h2>
-    <p><strong>Contenu Client</strong> est une agence spécialisée dans la création de vidéos UGC (User Generated Content) qui misent sur l’authenticité, la proximité et l’impact.</p>
-    <p><strong>Nous ne filmons pas les vidéos nous-mêmes. Nous faisons le lien entre votre marque et un réseau de créateurs UGC sélectionnés selon votre secteur et vos objectifs.</strong></p>
-    <p><strong>Résultat :</strong> vous gagnez du temps, vous obtenez des vidéos prêtes à l’emploi, et vous touchez vos clients avec des contenus qui leur parlent vraiment.</p>
+    <p><strong>Contenu Client est une agence spécialisée dans la création de vidéos UGC (User Generated Content), au service des marques qui veulent toucher leur audience avec authenticité, impact et proximité.</p>
+    <p><strong>Nous ne réalisons pas les vidéos nous-mêmes : nous faisons le lien entre votre marque et des créateurs UGC sélectionnés avec soin, selon votre secteur, vos objectifs et vos valeurs.</strong></p>
+  </section>
+
+<section id="mission" class="mission" data-aos="fade-up" data-aos-delay="100">
+    <h2>Notre mission</h2>
+    <p>
+    Simplifier la production de contenu pour les marques en prenant en charge l’ensemble du processus :</p>
+
+	<p>- sélection des créateurs,</p>
+
+	<p>- gestion des échanges,</p>
+
+	<p>- coordination des livrables.</p>
+
+	<p>Vous gagnez du temps, vous obtenez des vidéos prêtes à l’emploi sois pour votre profil sois sur le profil de l'inluenceur, et vous communiquez avec des contenus réellement alignés avec votre audience.
+	Un service clé en main, sans friction
+    </p>
   </section>
 
   <section id="fonctionnement" class="how-it-works" data-aos="fade-up" data-aos-delay="200">
@@ -364,8 +394,7 @@
     <p>Nous nous occupons de tout pour vous :</p>
     <p>✅ Sélection de créateurs UGC adaptés à votre marque</p>
     <p>✅ Briefing et direction du tournage</p>
-    <p>✅ Réception, contrôle qualité et livraison</p>
-    <p>✅ Montage et formatage pour les Ads</p>
+    <p>✅ Réception, contrôle qualité et post des vidéos sous 7 jours selon le produit</p>
     <p>Votre seul travail : nous dire ce que vous vendez. On s’occupe du reste.</p>
   </section>
 
@@ -374,15 +403,15 @@
     <div class="why">
       <div>
         <h3>🎯 Vidéos qui convertissent</h3>
-        <p>Optimisées pour TikTok, Instagram et Meta Ads.</p>
+        <p>Des contenus courts qui transforment les vues en clients.</p>
       </div>
       <div>
-        <h3>🧑‍💼 Créées par des vrais gens</h3>
+        <h3>🧑‍💼 Vidéos créées par les influenceurs.</h3>
         <p>Des consommateurs réels qui parlent avec leur voix.</p>
       </div>
       <div>
         <h3>⚡ Rapide & sans stress</h3>
-        <p>Vous nous briefez, on s’occupe de tout. En 7 jours, vidéos prêtes.</p>
+        <p>Vous nous briefez, on s’occupe de tout. En 7 jours, les vidéos sont postées selon le produit.</p>
       </div>
     </div>
   </section>
@@ -404,8 +433,8 @@
       </div>
       
 	  <div>
-        <h3><u>Ads Pro</u></h3>
-        <p>🎬 10 vidéos + 10 formats courts + réductions sur le prochain payment du "Ads Pro" <br><small><s>900 €</s> → 825 €</small></p>
+        <h3><u>Premium</u></h3>
+        <p>🎬 10 vidéos + 10 formats courts + réductions sur le prochain pack "Premium" <br><small><s>900 €</s> → 825 €</small></p>
 		<p><strong>900 €</strong></p>
       </div>
     </div>
@@ -415,10 +444,23 @@
 
 
   <section id="contact" class="contact" data-aos="fade-up" data-aos-delay="700">
-    <h2>Contact</h2>
-    <p>📧 <strong>Email :</strong> <a href="mailto:contact@contenuclient.fr">contact@contenuclient.fr</a></p><br>
-    <p>📱 <strong>Téléphone :</strong> 06 12 34 56 78</p><br>
-    <p>📅 <strong>Rendez-vous :</strong> <a href="#">Lien Calendly</a></p>
+    
+	<h2><u>Contact       <img src="https://i.imgur.com/b4BobpK.png" alt="Contact" style="height: 35px; vertical-align: middle; margin-right: 8px;"></u></h2>
+	
+	<p><strong>Intéressé par un pack ? Des questions ? On vous répond par mail : </strong></p><br>
+	
+	<p><img src="https://i.imgur.com/svYkRFz.png" alt="Contact" style="height: 35px; vertical-align: middle; margin-right: 8px;"></p><br>
+	
+	 <div class="buttons">
+	 
+	 <a href="mailto:contenuclient@gmail.com" target="_blank">
+		contenuclient@gmail.com
+	  </a></div>
+	 
+
+	<br>
+	
+    
   </section>
 
   <footer>
